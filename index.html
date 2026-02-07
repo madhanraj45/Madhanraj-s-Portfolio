@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madhanraj B | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --accent:#00eaff;
+  --bg:#0b0f1a;
+  --glass:rgba(255,255,255,0.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  font-size: 17.5px;
+  background:linear-gradient(rgba(11,15,26,.92),rgba(11,15,26,.92)),
+  url(download.jpg);
+
+  background-size:cover;
+  background-attachment:fixed;
+  color:#eaeaea;
+  scroll-behavior:smooth;
+}
+
+/* RIGHT DOT NAV */
+.side-nav{
+  position:fixed;
+  right:35px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  z-index:999;
+}
+.side-nav a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-size:.9rem;
+  color:#aaa;
+  transition:.3s;
+}
+
+.side-nav a i{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#555;
+  transition:.3s;
+}
+
+.side-nav a span{
+  opacity:1;
+  color:#aaa;
+  font-weight:500;
+}
+
+.side-nav a:hover{
+  color:var(--accent);
+  transform:translateX(-5px);
+}
+
+.side-nav a:hover i{
+  background:var(--accent);
+}
+
+.side-nav a.active{
+  color:var(--accent);
+}
+
+.side-nav a.active i{
+  background:var(--accent);
+}
+
+.side-nav a:hover span{opacity:1}
+.side-nav a.active{background:var(--accent)}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:10%;
+}
+.hero h1{
+  font-family:'Playfair Display',cursive;
+  font-style:italic;
+  font-size:4rem;
+  color:var(--accent);
+  animation:glowPulse 4s ease-in-out infinite;
+letter-spacing:2px;
+
+}
+.hero p{font-size:1.3rem;opacity:.85}
+
+.section{padding:100px 10%}
+.section-title{
+  font-family:'Orbitron',sans-serif;
+  color:var(--accent);
+  font-size:1.8rem;
+  margin-bottom:25px;
+}
+
+.glass{
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  padding:25px 30px;
+  box-shadow:0 0 25px rgba(0,234,255,.15);
+  
+}
+.contact-link{
+  
+  color:#7c6cff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.contact-link:hover{
+  text-decoration:underline;
+}
+.skill-list li{
+  margin-bottom:8px;
+  list-style:square;
+  color:#eaeaea;
+}
+
+
+/* SKILLS */
+.skill-list{display:grid;gap:10px}
+
+/* TIMELINE BOX */
+.timeline{
+  position:relative;
+  padding-right:120px;
+}
+.timeline span{
+  position:absolute;right:20px;top:25px;
+  font-size:.9rem;color:var(--accent)
+}
+.timeline strong{color:#fff;font-size:1.05rem}
+
+/* PROJECTS */
+.project{margin-bottom:15px;cursor:pointer}
+.project h3{color:#fff}
+.project-content{max-height:0;overflow:hidden;transition:.5s}
+.project.active .project-content{max-height:300px;margin-top:10px}
+.project-content a{color:var(--accent);text-decoration:none}
+
+
+/* CIRCUIT BACKGROUND */
+.circuit{
+ position:fixed;inset:0;z-index:-1;overflow:hidden
+}
+.circuit span{
+ position:absolute;width:120px;height:1px;
+ background:linear-gradient(90deg,transparent,var(--accent),transparent);
+ opacity:.25;animation:flow 8s linear infinite
+}
+@keyframes flow{
+ from{transform:translateX(-150px)}
+ to{transform:translateX(100vw)}
+}
+@keyframes glowPulse{
+  0%{
+    text-shadow:0 0 8px rgba(0,234,255,0.4);
+  }
+  50%{
+    text-shadow:0 0 18px rgba(0,234,255,0.9);
+  }
+  100%{
+    text-shadow:0 0 8px rgba(0,234,255,0.4);
+  }
+}
+.project-hint{
+  font-size:.9rem;
+  opacity:.7;
+  margin-bottom:15px;
+}
+
+.project h3{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.arrow{
+  transition:.4s;
+  opacity:.6;
+}
+
+.project:hover .arrow{
+  opacity:1;
+}
+
+.project.active .arrow{
+  transform:rotate(180deg);
+  color:var(--accent);
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="circuit">
+  <span style="top:15%;animation-duration:7s"></span>
+  <span style="top:35%;animation-duration:10s"></span>
+  <span style="top:55%;animation-duration:8s"></span>
+  <span style="top:75%;animation-duration:11s"></span>
+</div>
+
+<!-- NAV -->
+<div class="side-nav">
+  <a href="#about"><i>👤</i><span>About</span></a>
+  <a href="#skills"><i>⚙️</i><span>Skills</span></a>
+  <a href="#projects"><i>📃</i><span>Projects</span></a>
+  <a href="#education"><i>🎓</i><span>Education</span></a>
+  <a href="#experience"><i>🏭</i><span>Industry</span></a>
+  <a href="#contact"><i>✉️</i><span>Contact</span></a>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Madhanraj B</h1>
+  <p>Electrical & Electronics Engineer</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-title">About Me</div>
+  <div class="glass">
+    I am a Bachelor of Engineering graduate in Electrical and Electronics Engineering with the ability to adapt across both technical and leadership roles. I am disciplined, self‑driven, and a quick learner who enjoys understanding systems deeply—from intelligent energy management and automation to software‑assisted engineering solutions.
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="section-title">Core Skills</div>
+  <div class="glass skill-list">
+    <ul class="skill-list">
+  <li>Electrical Circuits</li>
+  <li>Electronics Components</li>
+  <li>EV Fundamentals</li>
+  <li>MATLAB</li>
+  <li>Java, HTML, CSS, C (Basics)</li>
+  <li>MS Office, SAP Exposure</li>
+  <li>Leadership, Quick Learner, Team Collaboration</li>
+</ul>
+
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="section-title">Projects</div>
+  <p class="project-hint">▾ Click a project to view details</p>
+
+
+  <div class="glass project" onclick="toggle(this)">
+    <h3>
+  Intelligent Energy Management System for Standalone EV
+  <span class="arrow">▾</span>
+</h3>
+
+    <div class="project-content">
+      Developed an intelligent energy management system for standalone electric vehicles powered by renewable energy sources. The system uses Adaptive PID control to efficiently manage power flow between renewable sources, battery storage, and vehicle load.
+The objective was to improve energy efficiency, battery life, and system stability under varying load and environmental conditions.
+Simulation and control logic were designed to ensure reliable performance and optimal energy utilization.
+<br>
+      <a href="#">https://ieeexplore.ieee.org/document/11031559</a>
+    </div>
+  </div>
+
+  <div class="glass project" onclick="toggle(this)">
+    <h3>Underground Cable Fault Detection
+      <span class="arrow">▾</span>
+    </h3>
+    <div class="project-content">Designed and developed an underground cable fault detection system to identify faults in electrical cables without manual digging. The system detects short circuit, open circuit, and earth faults by measuring variations in electrical parameters and estimating the fault location.
+This project helps reduce maintenance time, cost, and power outage duration in power distribution networks.</div>
+  </div>
+
+  <div class="glass project" onclick="toggle(this)">
+    <h3>Bus Reservation System
+      <span class="arrow">▾</span>
+    </h3>
+    <div class="project-content">Developed an online bus reservation system to automate ticket booking and seat management processes. The system allows users to search buses, check seat availability, book tickets, and manage reservations through a simple and user-friendly interface.
+The project aims to improve efficiency, reduce manual work, and enhance customer convenience.</div>
+  </div>
+
+  <div class="glass project" onclick="toggle(this)">
+    <h3>School Website Development
+      <span class="arrow">▾</span>
+    </h3>
+    <div class="project-content">
+      Personal Project : Designed and developed a responsive and professional school website using HTML and CSS. The website includes sections such as About, Courses, Teachers, Alumni, Sports, and Activities with smooth transitions and an elite user interface.
+Focused on clean design, usability, and structured content presentation.<br>
+      <a href="#"></a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="section-title">Education</div>
+
+  <div class="glass timeline">
+    <strong>B.E – Electrical & Electronics Engineering </strong><br>
+    St. Joseph’s College of Engineering, Chennai
+    <span>2021 – 2025 || CGPA 8.32</span>
+  </div><br>
+
+  <div class="glass timeline">
+    <strong>HSC</strong><br>
+    Sri Lakshmi Vidyalaya Matriculation Hr. Sec. School, Arakandanallur.
+    <span>2020-2021 || 89.98%</span>
+  </div><br>
+
+  <div class="glass timeline">
+    <strong>SSLC</strong><br>
+    Sri Lakshmi Vidyalaya Matriculation Hr. Sec. School, Arakandanallur.
+    <span> 2019-2020 || 90.6%</span>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="section-title">Industry Exposure</div>
+
+  <div class="glass">
+    <strong style="color:var(--accent)">TVS Sundaram</strong><br>
+    <li>Understood the workflow of <b>electrical and electronic components</b> and how they are used in industrial applications.</li>
+      <li>Learned the working process and operational fundamentals of <b>CNC machines</b>.</li>
+      <li>Monitored <b>HT / MV panel readings</b> on a daily basis to ensure safe and efficient operation.</li>
+      <li>Prepared <b>documentation for audits</b> and created structured <b>maintenance checklists</b>.</li>
+  </div><br>
+
+  <div class="glass">
+    <strong style="color:var(--accent)">Ashok Leyland</strong><br>
+     <li>Led the <b>Engine Dressing Line</b> to ensure continuous engine supply to the production line.</li>
+      <li>Worked under high-pressure production environments while maintaining quality and workflow.</li>
+      <li>Developed a strong understanding of <b>BOM (Bill of Materials)</b> and <b>ECO (Engineering Change Orders)</b>.</li>
+    
+  </div><br>
+
+  <div class="glass">
+    <strong style="color:var(--accent)">Sun Industrial Automation</strong><br>
+     <li>Understood various <b>electronic components</b> and their real-time industrial applications.</li>
+      <li>Gained hands-on experience in <b>soldering processes</b> and component-level work.</li>
+      <li>Improved <b>team collaboration</b> and practical skills in automation-based projects.</li>
+   
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+
+  <p>
+    📧 Email:
+    <a href="mailto:madhanbalaji20@gmail.com" class="contact-link">
+      madhanbalaji20@gmail.com
+    </a>
+  </p>
+
+  <p>
+    📞 Phone:
+    <a href="tel:+91 8489961920" class="contact-link">
+      +91 8489961920
+    </a>
+  </p>
+
+  <p>
+    🔗 LinkedIn:
+    <a href="https://www.linkedin.com/in/madhanraj-balaji/"
+       target="_blank"
+       class="contact-link">
+       Madhanraj B
+    </a>
+  </p>
+</section>
+
+
+<script>
+function toggle(el){
+ document.querySelectorAll('.project').forEach(p=>p!==el&&p.classList.remove('active'));
+ el.classList.toggle('active');
+}
+</script>
+</body>
+</html>
